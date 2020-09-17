@@ -1,0 +1,11 @@
+{"_id":{"$oid":"5e7ec7750f4c910a9c0de823"},"name":"Strawberry","price":{"$numberDouble":"5.97"},"description":"Sweet & succulent","fruitimage":"fru1.jpg","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5e7ec7ae0f4c910a9c0de824"},"name":"Banana","price":{"$numberDouble":"1.93"},"description":"Organic, soft, sweet and delicious. The banana is a popular choice for breakfast, snacks or any time of the day. The vibrant yellow peel provides natural protection while storing, and is a great indicator of when the fruit is ready to eat!","fruitimage":"fru2.jpg","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5e7ec7c40f4c910a9c0de825"},"name":" Apple, Gala","price":{"$numberDouble":"1.78"},"description":"","fruitimage":"fru3.jpg","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5e7ec7e00f4c910a9c0de826"},"name":"Blueberries","price":{"$numberDouble":"4.89"},"description":"","fruitimage":"fru4.jpg","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5e93617b563a3803db3e1b68"},"name":"Oranges","price":{"$numberDouble":"3.45"},"description":"","fruitimage":"fru5.jpg","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5e9365ab563a3803db3e1b69"},"name":"Avocado","price":{"$numberDouble":"1.08"},"description":"","fruitimage":"fru6.jpg","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5e936604563a3803db3e1b6a"},"name":"Apples Fuji","price":{"$numberDouble":"3.56"},"description":"","fruitimage":"fru7.jpg","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5e93662a563a3803db3e1b6b"},"name":"Kiwi","price":{"$numberDouble":"5.46"},"description":"","fruitimage":"fru8.jpg","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5e93666b563a3803db3e1b6c"},"name":"Squash","price":{"$numberDouble":"4.23"},"description":"","fruitimage":"fru9.jpg","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5e936695563a3803db3e1b6d"},"name":"Apples","price":{"$numberDouble":"3.78"},"description":"","fruitimage":"fru10.jpg","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5e9366c5563a3803db3e1b6e"},"name":"Apples granny smith","price":{"$numberDouble":"4.89"},"description":"","fruitimage":"fru11.jpg","__v":{"$numberInt":"0"}}

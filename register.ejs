@@ -1,0 +1,119 @@
+<%- include('layouts/header') -%>
+<div class="container register">
+    <div class="row">
+        <div class="col-sm-9" id="content">
+            <h1>Register Account</h1>
+            <p>If you already have an account , please login at the <a href="login">login page</a>.</p>
+            <form class="form-horizontal" enctype="multipart/form-data" method="post" action="/register">
+                <fieldset id="account">
+                    <legend>Your Personal Details</legend>
+                        <div class="form-group required">
+                            <label for="input-firstname" class="col-sm-2 control-label">First Name</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="input-firstname" placeholder="First Name" name="firstname">
+                            </div>
+                        </div>
+                        <div class="form-group required">
+                            <label for="input-lastname" class="col-sm-2 control-label">Last Name</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="input-lastname" placeholder="Last Name" name="lastname">
+                            </div>
+                        </div>
+                        <div class="form-group required">
+                            <label for="input-email" class="col-sm-2 control-label">E-Mail</label>
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control" id="input-email" placeholder="E-Mail" value="" name="email">
+                            </div>
+                        </div>
+                        <div class="form-group required">
+                            <label for="input-telephone" class="col-sm-2 control-label">Telephone</label>
+                            <div class="col-sm-10">
+                                <input type="tel" class="form-control" id="input-telephone" placeholder="Telephone" value="" name="telephone">
+                            </div>
+                        </div>
+                </fieldset>
+                <fieldset id="address">
+                    <legend>Your Address</legend>
+                    <div class="form-group required">
+                        <label for="input-address-1" class="col-sm-2 control-label">Address 1</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="input-address-1" placeholder="Address 1" value="" name="address1">
+                        </div>
+                    </div>
+                    <div class="form-group required">
+                        <label for="input-address-2" class="col-sm-2 control-label">Address 2</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="input-address-2" placeholder="Address 2" value="" name="address2">
+                        </div>
+                    </div>
+                    <div class="form-group required">
+                        <label for="input-city" class="col-sm-2 control-label">City</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="input-city" placeholder="City" value="" name="city">
+                        </div>
+                    </div>
+                    <div class="form-group required">
+                        <label for="input-postcode" class="col-sm-2 control-label">Postal Code</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="input-postcode" placeholder="Postal Code" value="" name="postalCode">
+                        </div>
+                    </div>
+                    <div class="form-group required">
+                        <label for="input-zone" class="col-sm-2 control-label">Province</label>
+                        <div class="col-sm-10">
+                            <select class="form-control" id="input-zone" name="province">
+                                <option value=""> --- Please Select --- </option>
+                                <option value="Alberta">Alberta</option>
+                                <option value="British Columbia">British Columbia</option>
+                                <option value="Manitoba">Manitoba</option>
+                                <option value="New Brunswick">New Brunswick</option>
+                                <option value="Newfoundland and Labrador">Newfoundland and Labrador</option>
+                                <option value="Northwest Territories">Northwest Territories</option>
+                                <option value="Nova Scotia">Nova Scotia</option>
+                                <option value="Nunavut">Nunavut</option>
+                                <option value="Ontario">Ontario</option>
+                                <option value="Prince Edward Island">Prince Edward Island</option>
+                                <option value="Quebec">Quebec</option>
+                                <option value="Saskatchewan">Saskatchewan</option>
+                                <option value="Yukon">Yukon</option>
+                            </select>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Password</legend>
+                    <div class="form-group required">
+                        <label for="input-password" class="col-sm-2 control-label">Password</label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" id="input-password" placeholder="Password" value="" name="password">
+                        </div>
+                    </div>
+                    <div class="form-group required">
+                        <label for="input-confirm" class="col-sm-2 control-label">Password Confirm</label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" id="input-confirm" placeholder="Password Confirm" value="" name="confirm">
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="buttons">
+                    <input type="submit" class="btn btn-primary" value="Continue">
+                </div>
+            </form>
+        </div>
+    </div>
+    <% 
+                if(typeof errors !== 'undefined'){
+                    for(var error of errors){
+                        %>
+                        <h3><%= error.msg %></h3>
+                        <%
+                    }
+                }
+                else{
+                    if(isCustomer != null){%>
+                        <h3><%= isCustomer %></h3>
+                        <%}
+                }
+            %>
+</div>
+<%- include('layouts/footer') -%>

@@ -1,0 +1,40 @@
+<%- include('layouts/header') -%>
+<div class="container login">
+  <div class="row">
+    <div class="col-sm-9" id="content">
+      <div class="row"> 
+        <div class="col-sm-6">
+          
+          <div class="well">
+            <h2>Login</h2>
+            <form enctype="multipart/form-data" method="post" action="/login">
+              <div class="form-group">
+                <label for="input-email" class="control-label">E-Mail Id</label>
+                <input type="text" class="form-control" id="input-email" placeholder="E-Mail Address" value="" name="email">
+              </div>
+              <div class="form-group">
+                <label for="input-password" class="control-label">Password</label>
+                <input type="password" class="form-control" id="input-password" placeholder="Password" value="" name="password">
+                <br>
+              <input type="submit" class="btn btn-primary" value="Login">
+            </form>
+          </div>
+        </div>
+        <% 
+                if(typeof errors !== 'undefined'){
+                    for(var error of errors){
+                        %>
+                        <h3><%= error.msg %></h3>
+                        <%
+                    }
+                }
+                else{
+                  if(isValid != null){%>
+                    <h3><%= isValid %></h3>
+                    <%}
+                }
+            %>
+      </div>
+    </div>
+  </div>
+</div>

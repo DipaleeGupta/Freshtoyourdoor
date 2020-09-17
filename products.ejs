@@ -1,0 +1,92 @@
+<% if(sess != false){%>
+  <%- include('layouts/userheader') %>
+<%}
+else{%>
+  <%- include('layouts/header') %>
+<%}%>
+<div class="container"> 
+    <div id="content" class="col-sm-9">
+      <div class="category-page-wrapper">
+        <div class="col-md-6 list-grid-wrapper">
+          <div class="btn-group btn-list-grid">
+            <button type="button" id="list-view" class="btn btn-default list" data-toggle="tooltip" title="List"><i class="fa fa-th-list"></i></button>
+            <button type="button" id="grid-view" class="btn btn-default grid" data-toggle="tooltip" title="Grid"><i class="fa fa-th"></i></button>
+          </div>
+        </div>
+      </div>
+      <br />
+      <div class="grid-list-wrapper">
+        <% if(match != null){ %>
+          <h2><%= match%></h2>
+        <%}%>
+        
+        <!-- Product -->
+        <% vegetables.forEach(function(vegetable){
+          %>
+        <div class="product-layout product-list col-xs-6">
+          <div class="product-thumb">
+            <div class="image product-imageblock"> <img src="image/product/<%= vegetable.vegetableimage %>" alt="Cauliflower" title="<%= vegetable.name %>" class="img-responsive" /> </a>
+              <div class="button-group">
+                <button type="button" class="addtocart-btn">Add to Cart</button>
+              </div>
+            </div>
+            <div class="caption product-detail">
+              <h4 class="product-name"><%= vegetable.name %></h4>
+              <p class="product-desc"><%= vegetable.description %></p>
+              <p class="price product-price">$<%= vegetable.price %><br></p>
+            </div>
+            <div class="button-group">
+           <button type="button" class="addtocart-btn">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <%
+                }); %>
+        <% fruits.forEach(function(fruit){
+            %>
+            <div class="product-layout product-list col-xs-12">
+                <div class="product-thumb">
+                    <div class="image product-imageblock"> <img src="image/product/<%= fruit.fruitimage %>" alt="Strawberry" title="<%= fruit.name %>" class="img-responsive" /> </a>
+                        <div class="button-group">
+                            <button type="button" class="addtocart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="caption product-detail">
+                        <h4 class="product-name"><%= fruit.name %></h4>
+                        <p class="product-desc"><%= fruit.description %></p>
+                        <p class="price product-price">$<%= fruit.price %><br></p>
+                    </div>
+                    <div class="button-group">
+                        <button type="button" class="addtocart-btn">Add to Cart</button>   
+                    </div>
+                </div>
+            </div>
+            <%
+                    }); %>
+            <% salads.forEach(function(salad){
+                %>
+                <div class="product-layout product-list col-xs-12">
+                    <div class="product-thumb">
+                        <div class="image product-imageblock"> <img src="image/product/<%= salad.saladimage %>" alt="Zucchini Noodles" title="<%= salad.name %>" class="img-responsive" /> </a>
+                            <div class="button-group">
+                              <button type="button" class="addtocart-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="caption product-detail">
+                            <h4 class="product-name"><%= salad.name %></h4>
+                            <p class="product-desc"> </p>
+                            <p class="price product-price">$<%= salad.price %><br></p>
+                        </div>
+                        <div class="button-group">
+                            <button type="button" class="addtocart-btn">Add to Cart</button>   
+                        </div>
+                    </div>
+                </div>
+                <%
+                        }); %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%- include('layouts/footer') -%>

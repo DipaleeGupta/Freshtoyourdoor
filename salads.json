@@ -1,0 +1,4 @@
+{"_id":{"$oid":"5e7ec6678b44c308431c270d"},"name":"Zucchini Noodles","price":{"$numberDouble":"3.97"},"description":"","saladimage":"Sal1.jpg","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5e7ec6c70f4c910a9c0de820"},"name":"Vegetable Tray","price":{"$numberDouble":"4.89"},"description":"","saladimage":"Sal2.jpg","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5e7ec6e20f4c910a9c0de821"},"name":"Peas/Broccoli/Carrots w /Dip","price":{"$numberDouble":"3.87"},"description":"","saladimage":"Sal3.jpg","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5e7ec6fd0f4c910a9c0de822"},"name":"Butternut Squash Noodles","price":{"$numberDouble":"5.67"},"description":"","saladimage":"Sal4.jpg","__v":{"$numberInt":"0"}}

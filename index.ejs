@@ -1,0 +1,26 @@
+﻿<% if(sess != false){%>
+  <%- include('layouts/userheader') %>
+<%}
+else{%>
+  <%- include('layouts/header') %>
+<%}%>
+<div class="mainbanner">
+  <div id="main-banner" class="owl-carousel home-slider">
+    <div class="item"> <a href="#"><img src="image/banners/Main-Banner1.jpg" alt="main-banner1" class="img-responsive images" /></a> </div>
+    <div class="item"> <a href="#"><img src="image/banners/Main-Banner2.jpg" alt="main-banner2" class="img-responsive images" /></a> </div>
+    <div class="item"> <a href="#"><img src="image/banners/Main-Banner3.jpg" alt="main-banner3" class="img-responsive images" /></a> </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="cms_banner ">
+      <div class="col-md-4 cms-banner-left"> <a href="#"><img class="subbanner1 img-responsive" alt="#" src="image/banners/subbanner1.jpg"></a> </div>
+      <div class="col-md-4 cms-banner-middle-top">
+        <div class="md1"><a href="#"> <img class="subbanner2 img-responsive" alt="#" src="image/banners/subbanner2.jpg"></a> </div>
+        <div class="md2"><a href="#"> <img class="subbanner2-1 img-responsive" alt="#" src="image/banners/subbanner2-1.jpg"></a></div>
+      </div>
+      <div class="col-md-4 cms-banner-right"> <a href="#"><img class="subbanner3 img-responsive" alt="#" src="image/banners/subbanner3.jpg"></a> </div>
+    </div>
+  </div>
+</div>
+<%- include('layouts/footer') -%>

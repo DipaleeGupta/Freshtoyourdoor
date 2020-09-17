@@ -1,0 +1,125 @@
+<% if(sess != false){%>
+    <%- include('layouts/userheader') %>
+  <%}
+  else{%>
+    <%- include('layouts/header') %>
+  <%}%>
+<div class="container register">
+    <div class="row">
+        <div class="col-sm-9" id="content">
+            <form class="form-horizontal" enctype="multipart/form-data" method="post" action="/checkout/<%= customer._id %>">
+                <fieldset id="account">
+                    <legend>Your Personal Details</legend>
+                        <div class="form-group required">
+                            <label for="input-firstname" class="col-sm-2 control-label">First Name</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="input-firstname" placeholder="First Name" value="<%= customer.firstname %>" name="firstname">
+                            </div>
+                        </div>
+                        <div class="form-group required">
+                            <label for="input-lastname" class="col-sm-2 control-label">Last Name</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="input-lastname" placeholder="Last Name" value="<%= customer.lastname %>" name="lastname">
+                            </div>
+                        </div>
+                        <div class="form-group required">
+                            <label for="input-email" class="col-sm-2 control-label">E-Mail</label>
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control" id="input-email" placeholder="E-Mail" value="<%= customer.email %>" name="email">
+                            </div>
+                        </div>
+                        <div class="form-group required">
+                            <label for="input-telephone" class="col-sm-2 control-label">Telephone</label>
+                            <div class="col-sm-10">
+                                <input type="tel" class="form-control" id="input-telephone" placeholder="Telephone" value="<%= customer.telephone %>" name="telephone">
+                            </div>
+                        </div>
+                </fieldset>
+                <fieldset id="address">
+                    <legend>Your Address</legend>
+                    <div class="form-group required">
+                        <label for="input-address-1" class="col-sm-2 control-label">Address 1</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="input-address-1" placeholder="Address 1" value="<%= customer.address1 %>" name="address1">
+                        </div>
+                    </div>
+                    <div class="form-group required">
+                        <label for="input-address-2" class="col-sm-2 control-label">Address 2</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="input-address-2" placeholder="Address 2" value="<%= customer.address2 %>" name="address2">
+                        </div>
+                    </div>
+                    <div class="form-group required">
+                        <label for="input-city" class="col-sm-2 control-label">City</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="input-city" placeholder="City" value="<%= customer.city %>" name="city">
+                        </div>
+                    </div>
+                    <div class="form-group required">
+                        <label for="input-postcode" class="col-sm-2 control-label">Postal Code</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="input-postcode" placeholder="Postal Code" value="<%= customer.postalCode %>" name="postalCode">
+                        </div>
+                    </div>
+                    <div class="form-group required">
+                        <label for="input-zone" class="col-sm-2 control-label">Province</label>
+                        <div class="col-sm-10">
+                            <select class="form-control" id="input-zone"  name="province">
+                                <option value="<%= customer.province %>"><%= customer.province %></option>
+                                <option value="Alberta">Alberta</option>
+                                <option value="British Columbia">British Columbia</option>
+                                <option value="Manitoba">Manitoba</option>
+                                <option value="New Brunswick">New Brunswick</option>
+                                <option value="Newfoundland and Labrador">Newfoundland and Labrador</option>
+                                <option value="Northwest Territories">Northwest Territories</option>
+                                <option value="Nova Scotia">Nova Scotia</option>
+                                <option value="Nunavut">Nunavut</option>
+                                <option value="Ontario">Ontario</option>
+                                <option value="Prince Edward Island">Prince Edward Island</option>
+                                <option value="Quebec">Quebec</option>
+                                <option value="Saskatchewan">Saskatchewan</option>
+                                <option value="Yukon">Yukon</option>
+                            </select>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset id="payment">
+                    <legend>Credit Card Details</legend>
+                    <div class="form-group required">
+                        <label for="card-number" class="col-sm-2 control-label">Card Number</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="card-number" placeholder="Card Number" value="<%= customer.cardNumber %>" name="cardNumber">
+                        </div>
+                    </div>
+                    <div class="form-group required">
+                        <label for="exp-month -year" class="col-sm-2 control-label">Expiry MM/YY</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="exp-month-year" placeholder="MM/YY" value="<%= customer.expMonthYear %>" name="expMonthYear">
+                        </div>
+                    </div>
+                    <div class="form-group required">
+                        <label for="cvv" class="col-sm-2 control-label">CVV</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="cvv" placeholder="123" value="<%= customer.cvv %>" name="cvv">
+                        </div>
+                    </div>
+                </fieldset>
+  
+                <div class="buttons">
+                    <input type="submit" class="pull-right btn btn-primary" value="Place Order">
+                    <!-- <button class="pull-right" type="submit"><a class="btn btn-primary" href="">Place Order</a></button> -->
+                </div>
+            </form>
+            <% 
+            if(typeof errors !== 'undefined'){
+                for(var error of errors){
+                    %>
+                    <h3><%= error.msg %></h3>
+                    <%
+                }
+            }
+        %>
+        </div>
+    </div>
+</div>
+<%- include('layouts/footer') -%>

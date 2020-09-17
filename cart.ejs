@@ -1,0 +1,135 @@
+<% if(sess != false){%>
+  <%- include('layouts/userheader') %>
+  <div class="container">
+    <ul class="breadcrumb">
+      <li><a href="/"><i class="fa fa-home"></i></a></li>
+      <li><a href="/cart">Shopping Cart</a></li>
+    </ul>
+    
+      <div class="col-sm-9" id="content">
+        <h1>My Basket </h1>
+        
+          <div class="table-responsive">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <td class="text-center">Image</td>
+                  <td class="text-left">Product Name</td>
+                  <td class="text-left">Quantity</td>
+                  <td class="text-right">Unit Price</td>
+                  <td class="text-right">Total</td>
+                </tr>
+              </thead>
+              <tbody>
+                <% carts.forEach(function(cart){
+                  %>
+                <form enctype="multipart/form-data" method="post" action="/update_item/<%= cart._id %>">
+                <tr>
+                  <td class="text-center"><a href="/vegetables"><img class="img-thumbnail" title="<%= cart.name %>" alt="<%= cart.name %>" src="image/product/<%= cart.image %>"></a></td>
+                  <td class="text-left"><%= cart.name %></td>
+                  
+                  <td class="text-left"><div style="max-width: 200px;" class="input-group btn-block">
+                      <input type="text" class="form-control quantity" size="1" value="<%= cart.quantity %>" name="quantity">
+                      <span class="input-group-btn">
+                      <a href=""><button class="btn btn-primary" title="" data-toggle="tooltip" type="submit" data-original-title="Update"><i class="fa fa-refresh"></i></button></a>
+                      <a href="/delete_item/<%= cart._id %>"><button  class="btn btn-danger" title="" data-toggle="tooltip" type="button" data-original-title="Remove"><i class="fa fa-times-circle"></i></button></a>
+                      </span></div></td>
+                  <td class="text-right">$<%= cart.price %></td>
+                  <td class="text-right">$<%= cart.price * cart.quantity %></td>
+                </tr>
+                </form>
+                <%
+                  }); %>
+              </tbody>
+            </table>
+          </div>
+       
+        <br>
+        <div class="row">
+          <div class="col-sm-4 col-sm-offset-8">
+            <table class="table table-bordered">
+              <tbody>
+                <tr>
+                  <td class="text-right"><strong>Total:</strong></td>
+                  <td class="text-right">$<%= total.toFixed(2) %></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="buttons">
+          <div class="pull-left"><a class="btn btn-default" href="/">Continue Shopping</a></div>
+          <div class="pull-right"><a class="btn btn-primary" href="/checkout">Proceed to Checkout</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+<%}
+else{%>
+  <%- include('layouts/header') %>
+  <div class="container">
+    <ul class="breadcrumb">
+      <li><a href="/"><i class="fa fa-home"></i></a></li>
+      <li><a href="/cart">Shopping Cart</a></li>
+    </ul>
+    
+      <div class="col-sm-9" id="content">
+        <h1>My Basket </h1>
+        
+          <div class="table-responsive">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <td class="text-center">Image</td>
+                  <td class="text-left">Product Name</td>
+                  <td class="text-left">Quantity</td>
+                  <td class="text-right">Unit Price</td>
+                  <td class="text-right">Total</td>
+                </tr>
+              </thead>
+              <tbody>
+                <% tempcarts.forEach(function(cart1){
+                  %>
+                <form enctype="multipart/form-data" method="post" action="/update_item1/<%= cart1._id %>">
+                <tr>
+                  <td class="text-center"><a href="/vegetables"><img class="img-thumbnail" title="<%= cart1.name %>" alt="<%= cart1.name %>" src="image/product/<%= cart1.image %>"></a></td>
+                  <td class="text-left"><%= cart1.name %></td>
+                  
+                  <td class="text-left"><div style="max-width: 200px;" class="input-group btn-block">
+                      <input type="text" class="form-control quantity" size="1" value="<%= cart1.quantity %>" name="quantity">
+                      <span class="input-group-btn">
+                      <a href=""><button class="btn btn-primary" title="" data-toggle="tooltip" type="submit" data-original-title="Update"><i class="fa fa-refresh"></i></button></a>
+                      <a href="/delete_item1/<%= cart1._id %>"><button  class="btn btn-danger" title="" data-toggle="tooltip" type="button" data-original-title="Remove"><i class="fa fa-times-circle"></i></button></a>
+                      </span></div></td>
+                  <td class="text-right">$<%= cart1.price %></td>
+                  <td class="text-right">$<%= cart1.price * cart1.quantity %></td>
+                </tr>
+                </form>
+                <%
+                  }); %>
+              </tbody>
+            </table>
+          </div>
+      
+        <br>
+        <div class="row">
+          <div class="col-sm-4 col-sm-offset-8">
+            <table class="table table-bordered">
+              <tbody>
+                <tr>
+                  <td class="text-right"><strong>Total:</strong></td>
+                  <td class="text-right">$<%= total.toFixed(2) %></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="buttons">
+          <div class="pull-left"><a class="btn btn-default" href="/">Continue Shopping</a></div>
+          <div class="pull-right"><a class="btn btn-primary" href="/checkout">Proceed to Checkout</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+<%}%>
+<%- include('layouts/footer') -%>

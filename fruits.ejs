@@ -1,0 +1,48 @@
+<% if(sess != false){%>
+  <%- include('layouts/userheader') %>
+<%}
+else{%>
+  <%- include('layouts/header') %>
+<%}%>
+<div class="container">
+    <div id="content" class="col-sm-9">
+      <div class="category-page-wrapper">
+        <div class="col-md-6 list-grid-wrapper">
+          <div class="btn-group btn-list-grid">
+            <button type="button" id="list-view" class="btn btn-default list" data-toggle="tooltip" title="List"><i class="fa fa-th-list"></i></button>
+            <button type="button" id="grid-view" class="btn btn-default grid" data-toggle="tooltip" title="Grid"><i class="fa fa-th"></i></button>
+          </div>
+          </div>
+        <div class="col-md-1 text-right page-wrapper">
+        </div>
+        <div class="col-md-2 text-right sort-wrapper">
+        </div>
+      </div>
+      <br />
+      <div class="grid-list-wrapper">
+
+    <!-- Product -->
+    <% fruits.forEach(function(fruit){
+      %>
+        <div class="product-layout product-list col-xs-6">
+          <div class="product-thumb">
+            <div class="image product-imageblock"> <img src="image/product/<%= fruit.fruitimage %>" alt="Strawberry" title="<%= fruit.name %>" class="img-responsive" /> </a>
+              <a href="/add_fruit/<%= fruit._id %>"><div class="button-group"><button type="button" class="addtocart-btn">Add to Cart</button></a>
+              </div>
+            </div>
+            <div class="caption product-detail">
+              <h4 class="product-name"><%= fruit.name %></h4>
+              <p class="product-desc"><%= fruit.description %></p>
+              <p class="price product-price">$<%= fruit.price %></p>
+            </div>
+            <div class="button-group">
+              <a href="/add_fruit/<%= fruit._id %>"><button type="button" class="addtocart-btn">Add to Cart</button></a>
+            </div>
+          </div>
+        </div>
+        <%
+                }); %>
+    </div>
+  </div>
+</div>
+<%- include('layouts/footer') -%>

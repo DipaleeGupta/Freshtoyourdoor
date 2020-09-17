@@ -1,0 +1,25 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Laxen Sapani",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "*",
+    "connect-flash": "*",
+    "ejs": "*",
+    "express": "*",
+    "express-fileupload": "*",
+    "express-flash-messages": "^0.1.1",
+    "express-messages": "*",
+    "express-session": "*",
+    "express-validator": "*",
+    "fs-extra": "*",
+    "mongoose": "*",
+    "stripe": "^8.38.0"
+  }
+}
